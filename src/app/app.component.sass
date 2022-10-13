@@ -1,0 +1,208 @@
+/* AppComponent: composant principal  */
+  *
+    overflow-x: hidden
+.left
+    display: inline-block
+    width: 50%
+    height: 100%
+    background-image: url('/assets/retro.jpg')
+    transition: all 0.5s
+
+.right
+    background-repeat: no-repeat
+    background-size: cover
+    display: inline-block
+    width: 50%
+    height: 100%
+    background-image: url('/assets/new.jpg')
+    transition: all 0.5s
+.mainButton
+    width: 30% !important
+    height: 10% !important
+    left: 35%
+    top: 45%
+
+.void
+    width: 0%
+.display
+    width: 100%
+.returnNew
+    position: absolute
+    top: 0
+    left: 0
+.returnOccase
+    position: absolute
+    top: 0
+    right: 0
+.transition 
+  transition: .3s cubic-bezier(.3, 0, 0, 1.3)
+/*composants jeux et accessoires */
+
+.card 
+  background-color: #fff
+  height: 400px
+  width: 300px
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3)
+  overflow: hidden
+
+
+
+.card:hover 
+  box-shadow: 0px 30px 30px rgba(0,0,0,0.2)
+  height: 430px
+  width: 330px
+
+
+.card_circle 
+  height: 400px
+  width: 450px
+  background-size: cover
+  border-radius: 50%
+  margin-left: -75px
+  margin-top: -270px
+
+
+.card:hover .card_circle 
+  border-radius: 0
+  bottom: 100px
+
+  
+
+
+h2 
+  text-align: center
+  margin-top: 90px
+  z-index: 9999
+  font-size: 26px
+  color: #2196F3
+  width: 100%
+  font-family: 'Noto Sans', serif
+
+
+h2 small 
+  font-weight: normal
+  font-size: 65%
+  color: rgba(0,0,0,0.5)
+
+
+.card:hover h2 
+  margin-top: 50px
+  
+.modalBtn
+  left:38%
+  position: relative
+
+.card:hover .modalBtn
+    transform: scale(1.1)
+    transform: translate(10%,0)
+
+
+
+.cta-container 
+  text-align: center
+  margin-top: 290px
+  z-index: 9999
+  width: 100%
+  font-family: 'Noto Sans', serif
+
+
+.cta 
+  color: #fff
+  border: 2px solid #2196F3
+  background-color: #2196F3
+  padding: 10px 25px
+  border-radius: 50px
+  font-size: 17px
+  text-decoration: none
+  font-weight: bold
+  
+
+.ctacancel
+  color: #fff
+  border: 2px solid yellow
+  background-color: yellow
+  padding: 10px 25px
+  border-radius: 50px
+  font-size: 17px
+  text-decoration: none
+  font-weight: bold
+  
+  
+.descontainer
+  background-color:rgba(255,255,255,0.2)
+  display: block
+
+
+.card:hover .cta-container 
+  margin-top: 320px
+
+
+
+    
+.container
+    display: flex
+    flex-wrap: wrap
+    top: 3%
+    left: 0%
+    position: absolute
+    width: 100vw
+    height: 100%
+    gap: 30px
+    justify-content: space-evenly
+.popup
+    width: 100vw
+    height: 100vh
+    background: rgba(255,255,255,0.2)
+    position: absolute
+    top: -3%
+    left: 0%
+    z-index: 5
+    background-repeat: no-repeat
+.details
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-evenly
+    width: 50%
+    height: 50%
+    background-color: white
+    position: relative
+    top: 25%
+    left: 25%
+    background-repeat: no-repeat
+    background-size: contain
+    z-index: 6
+.detailsdescription
+    background-color: white
+.titlecontainer
+    overflow: hidden
+.flexbutton
+    display: flex
+    width: 100%
+    justify-content: space-evenly
+
+/*composant recherche*/
+form
+    position: absolute
+    top:0%
+    left:30%
+#searchButton
+    position: absolute
+    top: 0%
+    left: 50% 
+/* pagination */
+#previous
+    position: absolute
+    top: 0%
+    left: 70%
+#next
+    position: absolute
+    top: 0%
+    left: 80%
+
+
+
+
+
+    
+

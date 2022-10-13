@@ -1,0 +1,30 @@
+<div [className]="'container'" >
+    <div [className]="'card transition'" *ngFor = "let el of renderGameList"  >
+      <div>
+        <h2 class="transition">{{el.name}}<br><small>{{el.platform}}</small></h2>
+        <div class="cta-container transition"></div>
+        <div class="card_circle transition" [ngStyle]="{'background-image': 'url(' + el.background_image +')'}"><button mat-button (click) ="popUp(el.background_image,el.slug)" class="cta transition modalBtn" color="primary">details</button></div>
+      </div>
+      <div class="popup" *ngIf = 'toggle' [ngStyle]="{'background-image': 'url(' + image +')'}">
+        <div class = "details" >
+            <div class="flexbutton">
+            <div><button mat-button class="cta  transition" color="primary">Ajouter au panier</button></div>
+            <div class="titlecontainer">
+              <h2>{{name}}</h2>
+            </div>
+            <div><button mat-button class="ctacancel transition" color="warn" (click) = "popUp(image, description)">Annuler</button></div>
+            </div>
+            <div><p class="detailsdescription">{{description}}</p></div>
+            <div>
+              <p>prix</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form>
+    <input type="text" [(ngModel)] = "searching" placeholder="search..." [ngModelOptions]="{standalone: true}">
+  </form>
+  <button id="searchButton" (click)="search(searching, 1)">let's go</button>
+  <button><mat-icon id="previous" (click)="goBack()">fast_rewind</mat-icon></button>
+  <button><mat-icon id="next" (click)="goForward()">fast_forward</mat-icon></button>

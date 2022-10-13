@@ -1,0 +1,25 @@
+<nav id="menuneuf" *ngIf = "display === 1">
+    <div [className]="'menu'">
+        <div *ngFor="let el of menuNeuf" >
+            <button mat-button [matMenuTriggerFor]="menu">{{el.marque}}</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item><a [routerLink]="['/consolesn', el.marque]" routerLinkActive="active" >consoles</a></button>
+                <button mat-menu-item><a [routerLink]="['/jeuxn', el.marque]" routerLinkActive="active" >jeux</a></button>
+                <button mat-menu-item><a [routerLink]="['/accessoiresn', el.marque]" routerLinkActive="active" >accessoires</a></button>
+            </mat-menu>
+        </div>
+    </div>
+</nav>
+<nav id="menuoccase" *ngIf = "display === 2">
+    <div [className]="'menuOccase'">
+        <div *ngFor="let el of menuOccase" >
+            <button mat-button [matMenuTriggerFor]="menu">{{el.categorie}}</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item><a [routerLink]="['/nintendoo', el.categorie]" routerLinkActive="active" >Nintendo</a></button>
+                <button mat-menu-item><a [routerLink]="['/segao', el.categorie]" routerLinkActive="active" >Sega</a></button>
+                <button mat-menu-item><a [routerLink]="['/sonyo', el.categorie]" routerLinkActive="active" >Sony</a></button>
+                <button mat-menu-item><a [routerLink]="['/xboxo', el.categorie]" routerLinkActive="active" >Xbox</a></button>
+            </mat-menu>
+        </div>
+    </div>
+</nav>
