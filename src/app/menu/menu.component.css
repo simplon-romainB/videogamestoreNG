@@ -1,0 +1,26 @@
+.menu {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+}
+
+.bouton {
+  display: inline-block;
+}
+
+.menuOccase {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+}
+
+a {
+  text-decoration: none !important;
+  color: black;
+}/*# sourceMappingURL=menu.component.css.map */

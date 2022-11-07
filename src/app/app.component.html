@@ -1,14 +1,31 @@
-<section class="right" [ngClass] = "{'display': this.display === 1, 'void': this.display === 2}">
   
-  <button mat-raised-button color="primary" class="mainButton" (click) ="unlockMenu(1)" [ngStyle]="{'display':this.display === 0 ?'block':'none'}">neuf</button>
+  <header>
+    <h1>Video Game Store</h1>
+    <div class="logincontainer">
+      <a  [routerLink]="['/userprofile']"*ngIf="usersService.logged"><mat-icon>person</mat-icon></a>
+      <a *ngIf="!usersService.logged" [routerLink]="['/login']" ><mat-icon class="clickableicons">login</mat-icon></a>
+      <a [routerLink]="['/cart']" ><mat-icon class="clickableicons">shopping_cart</mat-icon></a>
+      <a [routerLink]="['/register']" ><mat-icon class="clickableicons">person_add_alt</mat-icon></a>
+      
+    </div>
+    <div class="itemsnumbercontainer"><small class="itemsnumber">{{cartService.itemsNumber}}</small></div>
+  </header>
+  
+  
+<section class="right panel" [ngClass] = "{'display': this.display === 1, 'void': this.display === 2}">
+  
+  <button mat-raised-button color="primary" class="mainButton cta  transition" (click) ="unlockMenu(1)" [ngStyle]="{'display':this.display === 0 ?'block':'none'}">neuf</button>
   
 </section>
-<button mat-raised-button color="primary"  [className] = "'returnOccase'" (click) = "unlockMenu(2)"[ngStyle]="{'display':this.display === 1 ?'inline-block':'none'}" (click)="unlockMenu(2)">retro et occasion</button>
-<section class="left" [ngClass] = "{'display': this.display === 2, 'void': this.display === 1}">
-  <button mat-raised-button color="primary" class = "mainButton" (click) = "unlockMenu(2)" [ngStyle]="{'display':this.display === 0 ?'block':'none'}">retro et occasion</button>
+<a [routerLink] = "['../']"><button mat-raised-button color="primary"  class = "returnOccase cta  transition" (click) = "unlockMenu(2)"[ngStyle]="{'display':this.display === 1 ?'inline-block':'none'}" (click)="unlockMenu(2)">retro et occasion</button></a>
+<section class="left panel" [ngClass] = "{'display': this.display === 2, 'void': this.display === 1}">
+  <button mat-raised-button color="primary" class = "mainButton cta  transition" (click) = "unlockMenu(2)" [ngStyle]="{'display':this.display === 0 ?'block':'none'}">retro et occasion</button>
   
 </section>
-<button mat-raised-button color="primary"  [className] = "'returnNew'" (click) = "unlockMenu(2)"[ngStyle]="{'display':this.display === 2 ?'inline-block':'none'}" (click)="unlockMenu(1)">neuf</button>
+<a [routerLink] = "['../']"><button mat-raised-button color="primary"  class = "returnNew cta  transition" [ngStyle]="{'display':this.display === 2 ?'inline-block':'none'}" (click)="unlockMenu(1)">neuf</button></a>
 <app-menu [display] = display>
 </app-menu>
+
 <router-outlet></router-outlet>
+<app-footer></app-footer>
+

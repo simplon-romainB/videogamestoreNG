@@ -9,17 +9,25 @@ import { Observable } from 'rxjs'
 export class GamesService {
 
   constructor(private http: HttpClient) { }
-
-  getGames(page: number, marque: string) {
-    return this.http.get("https://api.rawg.io/api/games?page="+ page +"&page_size=10&parent_platforms="+marque+"&key=e4ac5a1e8b2c4d3fbcd8f383d441321b")
-  }
-
-  searchGames(search: string,page: number, platform: string) {
-    return this.http.get("https://api.rawg.io/api/games?page="+ page +"&page_size=10&search="+search+"&parent_platforms=" +platform +"&key=e4ac5a1e8b2c4d3fbcd8f383d441321b")
-  }
-  getDetails(name: string) {
-    return this.http.get("https://api.rawg.io/api/games/"+name+"?page=1&page_size=10&key=e4ac5a1e8b2c4d3fbcd8f383d441321b")
-  }
+  //fonctions de consommation de l'API
   
 
+  searchGames(search: string,page: number, platform: [string, string, string]) {
+    var plat = []
+    for (var i = 0;i<3;i++) {
+      platform[i] === ''?plat[i] = "nonetheless": plat[i] = platform[i]
+    }
+    return this.http.post("http://localhost:3000/searchGames?search=%" + search + "%&page=" + page, plat)
+  }
+
+  searchGamesO(search: string,page: number, platform: [string, string, string]) {
+    var plat = []
+    for (var i = 0;i<3;i++) {
+      platform[i] === ''?plat[i] = "nonetheless": plat[i] = platform[i]
+    }
+    return this.http.post("http://localhost:3000/searchGamesO?search=%" + search + "%&page=" + page, plat)
+  }
+  getConsoles(marque: string) {
+    return this.http.get("http://localhost:3000/consoles?marque=%" + marque + "%")
+  }
 }

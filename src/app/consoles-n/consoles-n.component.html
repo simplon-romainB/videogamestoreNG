@@ -1,1 +1,22 @@
-
+<div [className]="'container'" >
+    <div [className]="'card transition'" *ngFor = "let el of renderConsoleList"  >
+      <div>
+        <h2 class="transition">{{el.nom_console}}<br></h2>
+        <div class="cta-container transition"></div>
+        <div class="card_circle transition" [ngStyle]="{'background-image': 'url(' + el.image +')'}"><button mat-button (click) ="popUp(el.image, el.description_console, el.prix_console, el.nom_console)" class="cta transition modalBtn" color="primary">details</button></div>
+      </div>
+      <div class="popup" *ngIf = 'toggle' [ngStyle]="{'background-image': 'url(' + image +')'}">
+        <div class = "details" >
+          <div class="titlecontainer">
+            <h2 class="gametitle">{{title}}</h2>
+          </div>
+          <mat-icon class="clickableicons addcart" (click) = add()>add_shopping_cart</mat-icon>
+          <div><mat-icon (click) = "popUp(image,description, prix, title)" class="clickableicons return">replay</mat-icon></div>
+          <div class="gamedetailcontainer"><p class="detailsdescription" >{{description}}</p></div>
+          <div class="gamepricecontainer">
+            <p class = 'gameprice'>{{prix | currency:'EUR' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

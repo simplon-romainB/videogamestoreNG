@@ -1,0 +1,12 @@
+<div class="registercontainer cartcontainer;trackBy:cancelItem" *ngIf="cartService.items.length !== 0">
+    <div *ngFor="let item of cartService.items" class="cartflexsubcontainer" >
+        <div class="cartimage cartflexitems " [ngStyle]="{'background-image': 'url(' + item.image +')'}"></div>
+        <div class = "cartflexitems itemdesignation">{{item.designation}}</div>
+        <div class = "cartflexitems">{{item.price | currency:'EUR'}}</div>
+        <input type="number" (click) = "update()" value="1"  name="quantity" [(ngModel)]="item.quantity" min="1" class = "cartflexitems">
+        <button class="cta" (click)="cancelItem(item)">Annuler</button>
+    </div>
+    <div>total = {{total | currency:'EUR'}}</div>
+    <a [routerLink] = "['../']"><mat-icon class="clickableicons">replay</mat-icon></a>
+    <button class="cta buybutton" (click)="acheter()">Acheter</button>
+</div>

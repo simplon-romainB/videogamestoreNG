@@ -1,15 +1,21 @@
 <div [className]="'container'" >
   <div [className]="'card transition'" *ngFor = "let el of renderAccessoires"  >
     <div>
-      <h2 class="transition">{{el.marque}}<br><small>{{el.description}}</small></h2>
+      <h2 class="transition">{{el.marque}}<br></h2>
       <div class="cta-container transition"></div>
-      <div class="card_circle transition" [ngStyle]="{'background-image': 'url(' + el.image +')'}"><button mat-button (click) ="popUp(el.image, el.description)" class="cta transition modalBtn" color="primary">details</button></div>
+      <div class="card_circle transition" [ngStyle]="{'background-image': 'url(' + el.image +')'}"><button mat-button (click) ="popUp(el.image, el.description, el.prix, el.title)" class="cta transition modalBtn" color="primary">details</button></div>
     </div>
-    <div class="popup" *ngIf = 'toggle'>
-      <div class = "details" [ngStyle]="{'background-image': 'url(' + image +')'}">
-        <div><button mat-button class="cta  transition" color="primary">Ajouter au panier</button></div>
-        <div><button mat-button class="ctacancel transition" color="warn" (click) = "popUp(image, description)">Annuler</button></div>
-        <p>Description: {{description}}</p>
+    <div class="popup" *ngIf = 'toggle' [ngStyle]="{'background-image': 'url(' + image +')'}">
+      <div class = "details" >
+        <div class="titlecontainer">
+          <h2 class="gametitle">{{title}}</h2>
+        </div>
+        <mat-icon class="clickableicons addcart" (click) = add()>add_shopping_cart</mat-icon>
+        <div><mat-icon (click) = "popUp(image,description, prix, title)" class="clickableicons return">replay</mat-icon></div>
+        <div class="gamedetailcontainer"><p class="detailsdescription" >{{description}}</p></div>
+        <div>
+          <p>{{prix}}</p>
+        </div>
       </div>
     </div>
   </div>

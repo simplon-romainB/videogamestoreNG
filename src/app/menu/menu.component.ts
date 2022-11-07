@@ -11,8 +11,9 @@ export class MenuComponent implements OnInit {
 
   constructor() { }
 
-  public menuNeuf = [{marque: 'Nintendo'},{marque: 'Xbox'}, {marque: 'Sony'}]
-  public menuOccase = [{categorie: 'Consoles'}, {categorie: 'Jeux'}, {categorie: 'Accessoires'}]
+  public menuNeuf = [{marque: 'Nintendo'},{marque: 'Xbox'}, {marque: 'Sony'}];
+  public menuOccase = [{categorie: 'Consoles'}, {categorie: 'Jeux'}, {categorie: 'Accessoires'}];
+  
   
 
   ngOnInit(): void {

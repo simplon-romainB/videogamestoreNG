@@ -1,21 +1,46 @@
-/* AppComponent: composant principal  */
-  *
-    overflow-x: hidden
-.left
+/* fonts */
+  
+@font-face 
+  font-family: "Amstrad CPC464"
+  src: url("..\assets\amstrad_cpc464_regular\Amstrad_CPC464_Regular\amstrad_cpc464.woff") format("woff")
+
+
+
+  /* AppComponent: composant principal  */
+a
+  color: black
+  text-decoration: none
+header
+  height:15vh
+  display: flex
+  justify-content: center
+.logincontainer
+  display: inline-flex
+  position: fixed
+  top: 0%
+  left: 0%
+  justify-content: space-evenly
+  width: 100%
+  border-bottom: 1px solid black
+  background-color: white
+h1
+  font-size: 80px
+  font-family: "Amstrad CPC464"
+  color: #2196F3
+  display: block
+  align-self: flex-end
+.left 
+    background-image: url('/assets/retroA.jpg')
+.panel
     display: inline-block
     width: 50%
-    height: 100%
-    background-image: url('/assets/retro.jpg')
+    height: 100vh
+    background-image: url('/assets/retroA.jpg')
     transition: all 0.5s
-
-.right
     background-repeat: no-repeat
     background-size: cover
-    display: inline-block
-    width: 50%
-    height: 100%
-    background-image: url('/assets/new.jpg')
-    transition: all 0.5s
+.right
+    background-image: url('/assets/neuf.jpg')
 .mainButton
     width: 30% !important
     height: 10% !important
@@ -30,12 +55,14 @@
     position: absolute
     top: 0
     left: 0
+    width: 190.633px
 .returnOccase
     position: absolute
     top: 0
     right: 0
 .transition 
-  transition: .3s cubic-bezier(.3, 0, 0, 1.3)
+  transition: .5s cubic-bezier(.3, 0, 0, 1.3)
+  overflow: hidden
 /*composants jeux et accessoires */
 
 .card 
@@ -44,15 +71,9 @@
   width: 300px
   box-shadow: 0px 0px 10px rgba(0,0,0,0.3)
   overflow: hidden
-
-
-
+  border-radius: 20px
 .card:hover 
   box-shadow: 0px 30px 30px rgba(0,0,0,0.2)
-  height: 430px
-  width: 330px
-
-
 .card_circle 
   height: 400px
   width: 450px
@@ -65,14 +86,17 @@
 .card:hover .card_circle 
   border-radius: 0
   bottom: 100px
-
-  
+.gamepricecontainer
+  width: 100%
+  display: flex
+  justify-content: center
+.gameprice
+  text-align: center 
 
 
 h2 
   text-align: center
   margin-top: 90px
-  z-index: 9999
   font-size: 26px
   color: #2196F3
   width: 100%
@@ -83,29 +107,41 @@ h2 small
   font-weight: normal
   font-size: 65%
   color: rgba(0,0,0,0.5)
-
-
-.card:hover h2 
+.gametitle
   margin-top: 50px
-  
+  text-align: center
+.card:hover h2
+  margin-top: 50px 
 .modalBtn
   left:38%
   position: relative
-
 .card:hover .modalBtn
     transform: scale(1.1)
-    transform: translate(10%,0)
-
-
-
+.clickableicons
+    cursor: pointer
+.addcart
+  position: absolute
+  top: 0%
+  left: 1%
+  font-size: 45px
+  height: 45px
+  width: 45px
+.return
+  position: absolute
+  top: 0%
+  right: 1%
+  font-size: 45px
+  height: 45px
+  width: 45px
+.gamedetailcontainer
+  border: 1px solid #2196F3
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3)
 .cta-container 
   text-align: center
   margin-top: 290px
   z-index: 9999
   width: 100%
   font-family: 'Noto Sans', serif
-
-
 .cta 
   color: #fff
   border: 2px solid #2196F3
@@ -115,8 +151,7 @@ h2 small
   font-size: 17px
   text-decoration: none
   font-weight: bold
-  
-
+  cursor: pointer
 .ctacancel
   color: #fff
   border: 2px solid yellow
@@ -129,39 +164,45 @@ h2 small
   
   
 .descontainer
-  background-color:rgba(255,255,255,0.2)
+  background-color: rgba(255,255,255,0.2)
   display: block
 
 
 .card:hover .cta-container 
-  margin-top: 320px
-
-
-
-    
+  margin-top: 320px 
 .container
     display: flex
     flex-wrap: wrap
-    top: 3%
+    top: 17vh
     left: 0%
     position: absolute
     width: 100vw
     height: 100%
     gap: 30px
     justify-content: space-evenly
+
+.formcontainer
+   background-color: white
+   top: 0
+   flex-direction: column
+   gap: 15px
+   align-items: center
+.form
+  width: 500px
 .popup
     width: 100vw
     height: 100vh
     background: rgba(255,255,255,0.2)
     position: absolute
-    top: -3%
+    top: -2.3%
     left: 0%
     z-index: 5
     background-repeat: no-repeat
+    background-size: cover
 .details
     display: flex
     flex-direction: column
-    align-items: center
+    align-items: baseline
     justify-content: space-evenly
     width: 50%
     height: 50%
@@ -169,36 +210,149 @@ h2 small
     position: relative
     top: 25%
     left: 25%
-    background-repeat: no-repeat
-    background-size: contain
     z-index: 6
+    border-radius: 20px
 .detailsdescription
     background-color: white
+   
 .titlecontainer
     overflow: hidden
+    width: 100%
 .flexbutton
     display: flex
+    align-items: center
     width: 100%
     justify-content: space-evenly
 
 /*composant recherche*/
+.mat-button-toggle
+  background-color: white
+  border-radius: 50px
+
+.mat-button-toggle-checked 
+  background-color: #2196F3
 form
     position: absolute
     top:0%
     left:30%
 #searchButton
     position: absolute
-    top: 0%
-    left: 50% 
+    top: 9%
+    left: 10% 
+    background-color: #2196F3
+    border-radius: 50%
+    border: none
+    cursor: pointer
+.searchbar
+    border: none
+    border-bottom: 3px solid #2196F3
+    outline: none
+    top: 10vh
+    left: -28vw
+    position: absolute
+.green
+    color: green
+.red
+    color: red
 /* pagination */
 #previous
-    position: absolute
-    top: 0%
-    left: 70%
+    cursor: pointer
 #next
-    position: absolute
-    top: 0%
-    left: 80%
+    cursor: pointer
+.pagination
+    display: flex
+    justify-content: space-around
+    width: 100%
+    position: relative
+    top: 1%
+.type
+  position: absolute
+  top: 8%
+  left: 84%
+
+/*login/register components */
+.registercontainer
+  background-color: white
+  height: 100%
+  width: 100%
+  position: absolute
+  top: 15vh
+  left: 0
+
+.registerform
+  display: flex
+  flex-direction: column
+  width: 33%
+  left: 33%
+  top: 15%
+  position: absolute
+
+.form
+  width: 100%
+.confirmbutton
+  width: 33%
+  
+.userprofilebuttons
+  display: flex
+  justify-content: space-around
+
+.registerbuttons 
+  display: flex
+  justify-content: space-between
+
+/*cart*/
+.buybutton
+  position: relative
+  left: 92%
+.itemsnumber
+  font-size: 15px
+  position: fixed
+  color: white
+  left: 49.87vw
+.itemsnumbercontainer
+  width: 20px
+  height: 20px
+  background-color: #2196F3
+  top: 1%
+  left: 50%
+  position: fixed
+  border-radius: 50%
+.cartcontainer
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+.cartimage
+  width: 20%
+  height: 100%
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  background-size: 50%
+.cartflexitems
+  display: inline-block
+.cartflexsubcontainer
+  width: 100%
+  height: 15%
+  border: 1px solid #2196F3
+  display: flex
+  justify-content: space-evenly
+  align-items: center
+.itemdesignation
+  width: 20%
+  font-size: 20px
+
+//footer
+.footercontainer
+  display: flex
+  flex-direction: column
+  justify-content: center
+  width: 100%
+  height: 25vh
+  align-items: center
+  background-color: white
+
+
 
 
 

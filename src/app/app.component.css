@@ -1,0 +1,411 @@
+/* fonts */
+@font-face {
+  font-family: "Amstrad CPC464";
+  src: url("..\assets\amstrad_cpc464_regular\amstrad_CPC464_Regular\amstrad_cpc464.woff") format("woff");
+  /* AppComponent: composant principal  */
+}
+header {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+}
+
+.logincontainer {
+  display: inline-flex;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  justify-content: space-evenly;
+  width: 100%;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+h1 {
+  font-size: 80px;
+  font-family: "Amstrad CPC464";
+  color: #2196F3;
+  display: block;
+  align-self: flex-end;
+}
+
+.left {
+  background-image: url("/assets/retroA.jpg");
+}
+
+.panel {
+  display: inline-block;
+  width: 50%;
+  height: 100vh;
+  background-image: url("/assets/retroA.jpg");
+  transition: all 0.5s;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.right {
+  background-image: url("/assets/neuf.jpg");
+}
+
+.mainButton {
+  width: 30% !important;
+  height: 10% !important;
+  left: 35%;
+  top: 45%;
+}
+
+.void {
+  width: 0%;
+}
+
+.display {
+  width: 100%;
+}
+
+.returnNew {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 190.633px;
+}
+
+.returnOccase {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.transition {
+  transition: 0.5s cubic-bezier(0.3, 0, 0, 1.3);
+  overflow: hidden;
+}
+
+/*composants jeux et accessoires */
+.card {
+  background-color: #fff;
+  height: 400px;
+  width: 300px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.card:hover {
+  box-shadow: 0px 30px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card_circle {
+  height: 400px;
+  width: 450px;
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: -75px;
+  margin-top: -270px;
+}
+
+.card:hover .card_circle {
+  border-radius: 0;
+  bottom: 100px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 90px;
+  font-size: 26px;
+  color: #2196F3;
+  width: 100%;
+  font-family: "Noto Sans", serif;
+}
+
+h2 small {
+  font-weight: normal;
+  font-size: 65%;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.gametitle {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.card:hover h2 {
+  margin-top: 50px;
+}
+
+.modalBtn {
+  left: 38%;
+  position: relative;
+}
+
+.card:hover .modalBtn {
+  transform: scale(1.1);
+}
+
+.clickableicons {
+  cursor: pointer;
+}
+
+.addcart {
+  position: absolute;
+  top: 0%;
+  left: 1%;
+  font-size: 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.return {
+  position: absolute;
+  top: 0%;
+  right: 1%;
+  font-size: 45px;
+  height: 45px;
+  width: 45px;
+}
+
+.gamedetailcontainer {
+  border: 1px solid #2196F3;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cta-container {
+  text-align: center;
+  margin-top: 290px;
+  z-index: 9999;
+  width: 100%;
+  font-family: "Noto Sans", serif;
+}
+
+.cta {
+  color: #fff;
+  border: 2px solid #2196F3;
+  background-color: #2196F3;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ctacancel {
+  color: #fff;
+  border: 2px solid yellow;
+  background-color: yellow;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.descontainer {
+  background-color: rgba(255, 255, 255, 0.2);
+  display: block;
+}
+
+.card:hover .cta-container {
+  margin-top: 320px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  top: 17vh;
+  left: 0%;
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  gap: 30px;
+  justify-content: space-evenly;
+}
+
+.formcontainer {
+  background-color: white;
+  top: 0;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.form {
+  width: 500px;
+}
+
+.popup {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: -2.3%;
+  left: 0%;
+  z-index: 5;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-evenly;
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  position: relative;
+  top: 25%;
+  left: 25%;
+  z-index: 6;
+  border-radius: 20px;
+}
+
+.detailsdescription {
+  background-color: white;
+}
+
+.titlecontainer {
+  overflow: hidden;
+  width: 100%;
+}
+
+.flexbutton {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+/*composant recherche*/
+form {
+  position: absolute;
+  top: 0%;
+  left: 30%;
+}
+
+#searchButton {
+  position: absolute;
+  top: 9%;
+  left: 10%;
+  background-color: #2196F3;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.searchbar {
+  border: none;
+  border-bottom: 3px solid #2196F3;
+  outline: none;
+  top: 10vh;
+  left: -28vw;
+  position: absolute;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+/* pagination */
+#previous {
+  cursor: pointer;
+}
+
+#next {
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.type {
+  position: absolute;
+  top: 8%;
+  left: 92%;
+}
+
+/*login/register components */
+.registercontainer {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 15vh;
+  left: 0;
+}
+
+.registerform {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  left: 33%;
+  top: 15%;
+  position: absolute;
+}
+
+.form {
+  width: 100%;
+}
+
+.confirmbutton {
+  width: 33%;
+  position: relative;
+  left: 33%;
+}
+
+/*cart*/
+.itemsnumber {
+  font-size: 15px;
+  position: relative;
+  color: white;
+  left: 6.3px;
+}
+
+.itemsnumbercontainer {
+  width: 20px;
+  height: 20px;
+  background-color: #2196F3;
+  top: 1%;
+  left: 50%;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.cartcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.cartimage {
+  width: 20%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.cartflexitems {
+  display: inline-block;
+}
+
+.cartflexsubcontainer {
+  width: 100%;
+  height: 15%;
+  border: 1px solid #2196F3;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.itemdesignation {
+  width: 20%;
+  font-size: 20px;
+}/*# sourceMappingURL=app.component.css.map */
